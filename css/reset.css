@@ -1,0 +1,189 @@
+@import url(utils.css);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Body Tag Defaults */
+body {
+  margin: 0;
+  color: var(--clr-text);
+  background-color: var(--clr-body);
+  min-width: 100vh;
+  font-family: var(--font-family-paragraph);
+
+}
+
+/* Removing Bottom Margins from elements */
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Global Font sizes */
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--line-height-paragraph);
+}
+h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--line-height-paragraph);
+}
+h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--line-height-paragraph);
+}
+h4 {
+  font-size: var(--fs-h4);
+  line-height: var(--line-height-paragraph);
+}
+h5 {
+  font-size: var(--fs-h5);
+  line-height: var(--line-height-paragraph);
+}
+h6 {
+  font-size: var(--fs-h6);
+  line-height: var(--line-height-paragraph);
+}
+p , a  { 
+  line-height: var(--line-height-paragraph);
+}
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+/* Setting font line heights on headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-headings);
+  line-height: var(--line-height-headings);
+}
+/* Removing Margin on various elements */
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  text-wrap: pretty;
+}
+
+/* Paragraph Styles */
+p,
+li,
+figcaption {
+  max-width: 75ch;
+  margin-block: 0px;
+}
+
+/* List styles */
+ul,
+ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0;  
+}
+
+/* Link defaults  */
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--clr-text);
+
+  &:focus {
+    border:1px  var(--clr-primary-shade) solid;
+    padding: calc(var(--sp-50) - .30rem);
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Images */
+img,
+svg,
+video,
+figure,
+figcaption,
+picture {
+  display: block;
+  margin: 0;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  height: auto;
+}
+
+/* Section padding */
+section {
+  padding: var(--section-padding-lg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  display: block;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+/* Responsive stuff */
+
+@media (max-width: 730px) {
+  body {
+    overflow-x: hidden;
+  }
+  p {
+    max-width: 80%;
+  }
+
+  img {
+    padding: var(--sp-100);
+    width: 80%;;
+  }
+}

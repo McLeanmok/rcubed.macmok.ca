@@ -1,0 +1,15 @@
+/* Heading */
+@font-face {
+  font-family: "Italiana";
+  font-weight: 400;
+  src: url(../fonts/italiana.woff2) format(woff2),
+    url(../fonts/italiana.woff) format(woff),
+    url(../fonts/italiana.ttf) format(ttf);
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url(../fonts/inter.woff2) format(woff2),
+    url(../fonts/inter.woff) format(woff), url(../fonts/inter.ttf) format(ttf);
+}

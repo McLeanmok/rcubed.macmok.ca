@@ -1,0 +1,53 @@
+@import url(../utils.css);
+
+/* BENEFITS */
+.benefits > .container {
+    display: grid;
+  gap: calc(var(--content-gap-2) + var(--sp-200));
+}
+.benifits__section-title {
+  text-align: center;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: var(--grid-3);
+    gap: var(--content-gap-2);
+}
+/* counter */
+.benefit-counter {
+  counter-reset: benefit-counter;
+}
+.benefit-counter li > .benefit {
+  counter-increment: benefit-counter;
+}
+.benefit::before {
+  content: counter(benefit-counter);
+  display: block;
+  font-size: var(--fs-p);
+  text-align: center;
+  background-color: var(--clr-seccondary);
+  color: var(--clr-white);
+  padding: var(--sp-200);
+  margin-block: var(--sp-200);
+  border-radius: 200%;
+  width: 5rem;
+  height: 5rem;
+}
+/* Terms */
+.terms {
+  background-color: var(--clr-primary-shade);
+  color: var(--clr-white);
+}
+.terms > .container {
+  display: grid;
+  gap: var(--content-gap-2);
+}
+.terms > .container h2 {
+  text-align: center;
+}
+.term-grid {
+  display: grid;
+  grid-template-columns: var(--grid-3);
+  gap: var(--content-gap-2);
+}

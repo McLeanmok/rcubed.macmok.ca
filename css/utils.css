@@ -1,0 +1,314 @@
+@import url(fonts.css);
+/* Tokens */
+:root {
+  /* COLOURS */
+
+  --primary-h: 72;
+  --primary-s: 22;
+  --primary-l: 74%;
+  --clr-primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+  --clr-primary-shade: hsl(var(--primary-h) var(--primary-s) 45%);
+
+  /* Secondary */
+  --seccondary-h: 30;
+  --seccondary-s: 28;
+  --seccondary-l: 54%;
+  --clr-seccondary: hsl(
+    var(--seccondary-h) var(--seccondary-s) var(--seccondary-l)
+  );
+  --clr-seccondary-shade: hsl(var(--seccondary-h) var(--seccondary-l) 47%);
+
+  /* Surface */
+  --surface-h: 50;
+  --surface-s: 92;
+  --surface-l: 95%;
+  --clr-surface: hsl(var(--surface-h) var(--surface-s) var(--surface-l));
+
+  /* Others */
+  --clr-black: hsl(var(--primary-h) var(--primary-s) 10%);
+  --clr-white: hsl(var(--primary-h) var(--primary-s) 94%);
+  --black-overlay_clr: hsl(var(--clr-black) / 0.7);
+
+  /* Semantic Colours */
+  --clr-text: var(--clr-black);
+  --clr-body: var(--clr-white);
+
+  /* TYPOGRAPHY */
+
+  /* Font families */
+  --font-family-headings: "Italiana", sans-serif;
+  --font-family-paragraph: "Inter", sans-serif;
+  --line-height-paragraph: clamp(2rem, 0.956vw + 0.694rem, 1.5rem);
+  --line-height-headinsgs: clamp(8rem, 1.912vw + 1.388rem, 2rem);
+
+  /* Font sizes */
+  --fs-h1: clamp(2.206rem, 1.165vw + 1.833rem, 3.4247rem);
+  --fs-h2: clamp(2.207rem, 1.164vw + 1.834rem, 3.4247rem);
+  --fs-h3: clamp(2.207rem, 0.651vw + 1.999rem, 2.8868rem);
+  --fs-h4: clamp(1.4247rem, 0.818vw + 1.163rem, 2.2806rem);
+  --fs-h5: clamp(1.2656rem, 0.512vw + 1.102rem, 1.801rem);
+  --fs-h6: clamp(1.1125rem, 0.467vw + 0.963rem, 1.6013rem);
+  --fs-links: clamp(1rem, 0.215vw + 1.306rem, 1.6rem);
+  --fs-p: clamp(1rem, 0.299vw + 0.904rem, 1.3125rem);
+
+  /* SPACING */
+
+  /* Section padding values */
+  --section-padding-sm: clamp(0.5rem, 1.434vw + 0.041rem, 2rem);
+  --section-padding-md: clamp(2.5rem, 1.912vw + 1.888rem, 4.5rem);
+  --section-padding-lg: clamp(4rem, 3.824vw + 2.776rem, 8rem);
+  --section-padding-xl: clamp(8.5rem, 3.346vw + 0.429rem, 4.5rem);
+
+  /* spacing values */
+  --sp-50: 0.5rem;
+  --sp-100: 1rem;
+  --sp-150: 1.5rem;
+  --sp-200: 2rem;
+  --sp-250: 2.5rem;
+  --sp-300: 3rem;
+  --sp-350: 3.5rem;
+  --sp-500: 4rem;
+  --sp-450: 4.5rem;
+  --sp-500: 5rem;
+  --sp-550: 5.5rem;
+
+  /* Container Widths */
+  --container-standard-width: 80rem;
+  --container-narrow-width: 60rem;
+  --content-gap: var(--sp-100);
+  --content-gap-2: var(--sp-150);
+  /* OTHERS */
+
+  /*  Border Radius  */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-circle: 1000%;
+
+  /* Grid */
+  --grid-2: repeat(auto-fit, minmax(500px, 1fr));
+  --grid-3: repeat(auto-fit, minmax(333px, 3fr));
+  --grid-4: repeat(auto-fit, minmax(250px, 4fr));
+  /* We will create the unique grid variable when we cross that bridge  */
+}
+
+/* screen reader only class 
+    gotten from - https://www.accessibility-developer-guide.com/examples/hiding-elements/visually/
+*/
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Contaner */
+.container {
+  max-width: var(--container-standard-width);
+  padding-inline: 2rem;
+  margin-inline: auto;
+}
+.container__narrow {
+  max-width: var(--container-narrow-width);
+}
+/* Layout classes */
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.grid-2 {
+  display: grid;
+  gap: var(--content-gap);
+  grid-template-columns: var(--grid-2);
+}
+.grid-3 {
+  display: grid;
+  gap: var(--content-gap);
+  grid-template-columns: var(--grid-3);
+}
+.grid-stack {
+  display: grid;
+  gap: var(--sp-100);
+}
+
+.flex__row {
+  display: flex;
+  gap: var(--content-gap);
+  align-items: flex-start;
+}
+
+/* Component classes */
+
+/* Buttons */
+.btn__primary {
+  background-color: var(--clr-primary);
+  padding: var(--sp-100);
+  border-radius: var(--radius-md);
+  border: 0;
+  font-family: var(--font-family-headings);
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: var(--clr-primary-shade);
+    color: var(--clr-white);
+    border-radius: var(--radius-lg);
+  }
+}
+.btn__seccondary {
+  color: var(--clr-white);
+  background-color: var(--clr-seccondary);
+  padding: var(--sp-100);
+  border-radius: var(--radius-md);
+  border: 0;
+  font-family: var(--font-family-headings);
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: var(--clr-seccondary-shade);
+    border-radius: var(--radius-lg);
+  }
+}
+.btn__light {
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+  padding: var(--sp-100);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-headings);
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* Card */
+.step__card__full {
+  background-color: var(--clr-surface);
+  color: var(--clr-black);
+  padding: var(--sp-200);
+  text-align: center;
+
+  display: grid;
+  gap: var(--content-gap-2);
+}
+
+.step__flow {
+  counter-reset: step-counter;
+}
+.step__flow li {
+  counter-increment: step-counter;
+}
+.step__card__title::before {
+  content: counter(step-counter);
+  display: block;
+  font-size: var(--fs-p);
+  text-align: center;
+  background-color: var(--clr-seccondary);
+  color: var(--clr-white);
+  padding: var(--sp-200);
+  margin-bottom: var(--sp-200);
+  border-radius: var(--radius-circle);
+  width: 5rem;
+  height: 5rem;
+}
+
+.step__card__full > .step__card__title::before {
+  place-self: center;
+}
+/* Vertical Step Card */
+
+.why__reason__grid {
+  counter-reset: vertical-counter;
+}
+.why__reason__grid article {
+  counter-increment: vertical-counter;
+}
+.reason_card__title::before {
+  content: counter(vertical-counter);
+  display: block;
+  font-size: var(--fs-p);
+  text-align: center;
+  background-color: var(--clr-seccondary);
+  color: var(--clr-white);
+  padding: var(--sp-200);
+  margin-bottom: var(--sp-200);
+  border-radius: var(--radius-circle);
+  width: 5rem;
+  height: 5rem;
+}
+
+/* standard cards */
+.card__title {
+  padding: 0px;
+}
+.standard-card {
+  padding: var(--sp-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+}
+.card__body {
+  margin: auto 0;
+}
+.standard-card[data-card-type="primary"] {
+  background-color: var(--clr-primary);
+  color: var(--clr-black);
+}
+.standard-card[data-card-type="light"] {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
+
+/* Icon Card */
+.icon-card {
+  display: grid;
+  gap: var(--content-gap-2);
+}
+.icon-card__icon {
+  background-color: var(--clr-seccondary);
+  padding: var(--sp-200);
+  border-radius: var(--radius-circle);
+  width: 30%;
+}
+/* Form Elements */
+.input-inline,
+.input__block {
+  padding: var(--sp-100);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-paragraph);
+  font-size: calc(var(--fs-links) - 0.2rem);
+  background-color: var(--clr-surface);
+}
+
+/* Contact Form Module Styling */
+.contact__form {
+  display: grid;
+  gap: var(--content-gap);
+}
+
+.contact__form > .contact__form--name__feilds {
+  display: grid;
+  grid-template-columns: var(--grid-2);
+}
+.contact__form > .btn__primary {
+  justify-self: left;
+}
+
+/* Media Queries */
+@media (max-width: 730px) {
+  .grid-stack {
+    text-align: left;
+
+    p {
+      max-width: 50ch;
+    }
+  }
+}

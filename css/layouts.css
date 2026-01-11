@@ -1,0 +1,31 @@
+/* Flow */
+.grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 1rem);
+
+    > * {
+        margin: 0   ;
+    }
+}
+
+/* grid auto fit */
+.grid-auto-fit {
+    --grid-auto-fit-min-column-size: 200px;
+    --grid-auto-fit-gap: 1rem;
+
+    display: grid;
+    gap: var(--grid-auto-fit-gap);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--grid-auto-fit-min-column-size), 100%), 1fr)
+    );
+  }
+
+  /* Flex Stuff */
+  .flex-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fg-row-gap, 0.5rem), var(--fg-row-col-gap, 1rem);
+    gap: var(--fg-align, center);
+    justify-content: var(--fg-justify, start);
+  }

@@ -1,0 +1,22 @@
+@import url(utils.css);
+.my-box {
+    width: 5rem;
+    padding: 5rem;
+    background-color: var(--clr-primary);
+}
+
+/* Grid */
+.service {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.left-content h3 {
+    font-size: var(--fs-h3);
+}
+
+/* 3 colum grid */
+.boxes {
+    display: grid;
+    gap: var(--sp-150);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+}

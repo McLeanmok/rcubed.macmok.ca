@@ -1,0 +1,83 @@
+@import url(utils.css);
+@import url(templates.css);
+
+/* HERO */
+.hero__content {
+  align-items: center;
+}
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-100);
+}
+
+/* ABOUT */
+.about {
+  background-image: linear-gradient(
+      rgba(21, 22, 18, 70%),
+      rgba(21, 22, 18, 70%)
+    ),
+    url('../../media/storeshot.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-block: var(--section-padding-xl);
+  color: var(--clr-white);
+  text-align: center;
+}
+.about > .container {
+  display: grid;
+  gap: var(--sp-200);
+  p {
+    margin: auto;
+  }
+}
+
+
+
+/* CONSIGN */
+.consign {
+  background-color: var(--clr-seccondary-shade);
+  color: var(--clr-surface);
+}
+.consign > .container {
+  display: grid;
+  gap: var(--content-gap-2);
+  place-content: center;
+
+  h2 {
+    text-align: center;
+    margin-bottom: var(--sp-200);
+  }
+}
+.step__flow {
+  display: grid;
+  gap: calc(var(--content-gap) + var(--sp-150));
+}
+
+
+
+
+
+/* Write media queries here */
+
+@media (max-width: 840px) {
+  .hero__heading {
+    line-height: var(--sp-250);
+  }
+}
+@media (max-width: 796px) {
+  .hero__content {
+    flex-wrap: wrap;
+    gap: var(--sp-150);
+  }
+  .about > .container > p,h2 {
+    text-align: left;
+    margin: 0px;
+  }
+
+ 
+  .hero__content {
+    justify-content: start;
+  }
+}
