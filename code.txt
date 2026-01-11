@@ -1,7 +1,7 @@
 <div class="reason__listing grid-stack">
             <article class="reason grid-2">
               <div class="reason-text">
-                <h3 class="reason__title">ReExceptional Pricing</h3>
+                <h3 class="reason__title">Exceptional Pricing</h3>
                 <p class="reason__description">
                   You can find reduced prices on high-ticket clothing items. You
                   will pay a fraction of regular pricing, meaning that you can
